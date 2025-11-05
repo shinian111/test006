@@ -1,0 +1,25 @@
+[
+  {
+    "title": "⭐铝丝/油壶工装-专项",
+    "type": "folder",
+    "source": "data/fault_type_1.json"
+  },
+  {
+    "title": "原材料",
+    "type": "folder",
+    "children": [
+      {
+        "title": "PSMC1_2C_IPB",
+        "type": "page",
+        "content": "该材料批次可能导致接触不良。",
+        "rootCause": "供应商原材料成分波动，导致导电性下降。",
+        "measures": [
+          "检查材料批次号",
+          "更换为合格批次",
+          "<image src='images/example1.jpg' alt='材料对比' />"
+        ],
+        "notes": "需与质量部同步信息"
+      }
+    ]
+  }
+]
