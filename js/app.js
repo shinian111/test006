@@ -1,3 +1,4 @@
+
 class FaultTreeApp {
   constructor() {
     this.treeContainer = document.getElementById('treeContainer');
@@ -213,11 +214,11 @@ class FaultTreeApp {
     }
 
     if (item.rootCause) {
-      html += `<div class="section-title">📌 故障根本原因</div><p>${item.rootCause}</p>`;
+      html += `<h3 class="info-header"><i class="fas fa-tools"></i>维修措施</h3><p>${item.rootCause}</p>`;
     }
 
     if (item.measures && item.measures.length > 0) {
-      html += `<div class="section-title">✅ 处理措施</div><ul>`;
+      html += `<h3 class="info-header"><i class="fas fa-search"></i>根本原因</h3><ul>`;
       item.measures.forEach(m => {
         html += `<li>${m}</li>`;
       });
