@@ -1,29 +1,43 @@
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>IPB FA2 ST44/46 设备故障诊断</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css";>
+  <title>IPB FA2 设备故障处理手册</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css";>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <div class="container">
+<header>
+      <h1><i class="fas fa-tools"></i> IPB FA2 设备故障诊断与处理</h1>
+      <div class="subtitle">设备故障类别、失效项与处理措施</div>
+      <div class="search-container">
+        <div class="search-box">
+          <i class="fas fa-search"></i>
+          <input type="text" id="searchInput" placeholder="搜索故障类别、失效项...">
+        </div>
+      </div>
+    </header>
     <!-- 左侧树状导航 -->
+<div class="content">
     <div class="sidebar">
-      <h2>🔧 故障诊断树</h2>
-      <input type="text" id="searchInput" placeholder="🔍 搜索故障..." />
-      <div id="treeContainer" class="tree"></div>
-    </div>
+      <h2 class="section-title"><i class="fas fa-sitemap"></i>故障分类树</h2>
+<div class="no-results">未找到匹配的故障项</div>
+            <div id="treeContainer" class="tree"></div>
+    </div></div>
 
     <!-- 右侧内容区 -->
     <div class="main-content">
-      <div id="breadcrumb" class="breadcrumb"></div>
-      <div id="notesPanel" class="notes-panel hidden"></div>
-
-      <div id="contentArea">
+<h2 class="section-title"><i class="fas fa-clipboard-list"></i>故障处理信息</h2>
+<div id="contentArea">
         <p class="placeholder">请从左侧选择一个故障项查看详细信息。</p>
       </div>
+     
+      <div id="notesPanel" class="notes-panel hidden"></div>
+<div id="breadcrumb" class="breadcrumb"></div>
+     
     </div>
   </div>
 
