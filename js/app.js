@@ -52,7 +52,7 @@ class FaultTreeApp {
   }
 
   createTreeNode(item, basePath, key) {
-    const li = document.createElement('div');
+    const li = document.createElement('ul');
     li.className = 'tree-node';
     li.dataset.key = key;
     li.dataset.path = basePath;
@@ -153,7 +153,7 @@ class FaultTreeApp {
   }
 
   async expandNode(parentNode, item, basePath) {
-    const childrenContainer = document.createElement('div');
+    const childrenContainer = document.createElement('li');
     childrenContainer.className = 'tree-children';
     parentNode.parentNode.insertBefore(childrenContainer, parentNode.nextSibling);
     parentNode.dataset.container = 'true';
