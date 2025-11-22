@@ -160,7 +160,7 @@
             height: 20px;
         }
        
-        .node {
+        .tree-node {
             background: #f8f9fa;
             border: 1px solid #e9ecef;
             padding: 12px 15px;
@@ -172,13 +172,13 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
        
-        .node:hover {
+        .tree-node:hover {
             background: #e3f2fd;
             border-color: #bbdefb;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
        
-        .node i {
+        .tree-node i {
             font-size: 1.2rem;
             color: #3498db;
         }
@@ -189,7 +189,7 @@
             color: #2c3e50;
         }
        
-        .node.active {
+        .tree-node.active {
             background: #d1ecff;
             border-color: #3498db;
             box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
