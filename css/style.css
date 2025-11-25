@@ -1,13 +1,11 @@
 
-  /* 样式 */
-        * {
+{
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-       
-        body {
+body {
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             min-height: 100vh;
             display: flex;
@@ -15,16 +13,14 @@
             align-items: center;
             padding: 20px;
         }
-       
-        .container {
+.container {
             width: 100%;
             max-width: 1800px;
             display: flex;
             flex-direction: column;
             gap: 30px;
         }
-       
-        header {
+ header {
             text-align: center;
             padding: 20px;
             background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
@@ -33,18 +29,22 @@
             color: white;
             position: relative;
         }
-       
-        h1 {
-            font-size: 2.8rem;
+h1 {
+            font-size: 2rem;
             margin-bottom: 10px;
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
-       
-        .subtitle {
+.subtitle {
             font-size: 1.2rem;
             opacity: 0.9;
         }
-       
+.search-container {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 300px;
+        }
         .search-container {
             position: absolute;
             right: 20px;
@@ -79,12 +79,7 @@
             color: white;
             font-size: 1.2rem;
         }
-       
-        .content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
+
        
         .sidebar, .image-container {
             flex: 1;
@@ -97,16 +92,13 @@
             max-height: 600px;
             overflow-y: auto;
         }
-       
-        .sidebar {
+.sidebar {
             position: relative;
         }
-       
-        .sidebar:hover, .image-container:hover {
+.sidebar:hover, .image-container:hover {
             transform: translateY(-5px);
         }
-       
-        .section-title {
+.section-title {
             font-size: 1.8rem;
             color: #2c3e50;
             margin-bottom: 20px;
@@ -116,149 +108,18 @@
             align-items: center;
             gap: 10px;
         }
-       .tree-container {
-  position: relative;
-  padding-left: 20px;
-}
-
-.tree-node {
-  position: relative;
-  list-style: none;
-  margin: 0;
-  padding: 4px 0 4px 20px;
-  cursor: pointer;
-}
-
-/* 树状连接线 - 垂直线 */
-.tree-node::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1px;
-  height: 100%;
-  background-color: #ccc;
-}
-
-/* 树状连接线 - 水平线 */
-.tree-node::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 15px;
-  height: 1px;
-  background-color: #ccc;
-}
-
-/* 第一个节点的垂直线调整 */
-.tree-node:first-child::before {
-  top: 50%;
-  height: 50%;
-}
-
-/* 最后一个节点的垂直线调整 */
-.tree-node:last-child::before {
-  height: 50%;
-}
-
-/* 只有一个节点时的特殊处理 */
-.tree-node:only-child::before {
-  display: none;
-}
-
-.tree-node:only-child::after {
-  width: 10px;
-}
-
-/* 子节点容器样式 */
-.tree-children {
-  position: relative;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  padding-left: 20px;
-}
-
-/* 文件夹图标样式 */
-.tree-node.children > .icon::before {
-  content: "📁";
-  margin-right: 6px;
-}
-
-/* 叶子节点图标样式 */
-.tree-node.leaf > .icon::before {
-  content: "📄";
-  margin-right: 6px;
-}
-
-/* 展开状态的文件夹图标 */
-.tree-node.children.expanded > .icon::before {
-  content: "📂";
-}
-
-/* 节点标题样式 */
-.tree-node .title {
-  padding: 2px 8px;
-  border-radius: 3px;
-  transition: all 0.2s;
-}
-
-/* 激活节点样式 */
-.tree-node.active .title {
-  background-color: #e3f2fd;
-  color: #1976d2;
-  font-weight: bold;
-}
-
-/* 悬停效果 */
-.tree-node:hover .title {
-  background-color: #f5f5f5;
-}
-
-/* 搜索高亮样式 */
-.tree-node .title mark {
-  background-color: #fff3cd;
-  color: #856404;
-  padding: 1px 2px;
-  border-radius: 2px;
-}
-
-/* 响应式调整 */
-@media (max-width: 768px) {
-  .tree-container {
-    padding-left: 15px;
-  }
-  
-  .tree-node {
-    padding-left: 15px;
-  }
-  
-  .tree-node::after {
-    width: 10px;
-  }
-}
-
         .tree {
             list-style: none;
             padding-left: 20px;
         }
        
-        .tree ul {
-            list-style: none;
-            padding-left: 30px;
-            margin: 10px 0;
-            display: none; /* 初始隐藏所有子节点 */
-        }
-       
-        .tree li {
+        .tree-node {
             margin: 12px 0;
             position: relative;
             cursor: pointer;
             transition: all 0.3s ease;
         }
-       
-        .tree li:before {
+       .tree-node:before {
             content: "";
             position: absolute;
             top: 12px;
@@ -267,8 +128,7 @@
             height: 2px;
             background: #3498db;
         }
-       
-        .tree li:after {
+        .tree-node:after {
             content: "";
             position: absolute;
             top: -8px;
@@ -277,11 +137,9 @@
             height: 100%;
             background: #3498db;
         }
-       
-        .tree li:last-child:after {
+        .tree-node:last-child:after {
             height: 20px;
         }
-       
         .tree-node {
             background: #f8f9fa;
             border: 1px solid #e9ecef;
@@ -293,89 +151,37 @@
             transition: all 0.3s ease;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
-       
         .tree-node:hover {
             background: #e3f2fd;
             border-color: #bbdefb;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-       
         .tree-node i {
             font-size: 1.2rem;
             color: #3498db;
         }
-       
         .node-text {
             font-size: 1.1rem;
             font-weight: 500;
             color: #2c3e50;
         }
-       
-        .tree-node.active {
+.tree-node.active {
             background: #d1ecff;
             border-color: #3498db;
             box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
         }
-       
-        .b1-node {
-            background: #fff8e1;
-            border-color: #ffd54f;
-        }
-       
-        .b1-node:hover {
-            background: #ffecb3;
-        }
-       
-        .b1-node.active {
-            background: #fff176;
-            box-shadow: 0 0 0 3px rgba(255, 213, 79, 0.3);
-        }
-       
-        /* 措施展示区域 */
-        .measures-display {
-            padding: 20px;
-            line-height: 1.6;
-            overflow-y: auto;
-            max-height: 350px;
-        }
-       
-        .measures-display h3 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            border-bottom: 1px solid #e0e0e0;
-            padding-bottom: 10px;
-        }
-       
-        .measures-display ul {
+.tree-children {
             padding-left: 20px;
-            margin-bottom: 15px;
+           
+           
         }
-       
-        .measures-display li {
-            margin-bottom: 8px;
-        }
-       
-        .measures-display p {
-            margin-bottom: 10px;
-        }
-       
-        /* 措施信息框样式 */
-        .main-content {
-            background: #e3f2fd;
-            border-left: 4px solid #3498db;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 15px;
-            font-size: 0.95rem;
-        }
-       
-        .info-box {
+.info-box {
             background: #e3f2fd;
             border-left: 4px solid #3498db;
             padding: 15px;
             border-radius: 8px;
             margin-top: 25px;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
         }
        
         .info-box h3 {
@@ -383,41 +189,25 @@
             color: #2c3e50;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 5px;
         }
-       
-        .instructions {
-            margin-top: 20px;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            font-size: 0.95rem;
-        }
-       
-        .instructions ul {
-            padding-left: 20px;
-            margin-top: 10px;
-        }
-       
-        .instructions li {
-            margin: 8px 0;
-        }
-       
-        .no-results {
+     
+
+.no-results {
             color: #e74c3c;
             padding: 15px;
             text-align: center;
             font-weight: bold;
             display: none;
         }
-       
-        @media (max-width: 768px) {
+
+ @media (max-width: 768px) {
             .content {
                 flex-direction: column;
             }
            
             h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
            
             .section-title {
@@ -434,7 +224,12 @@
             header {
                 padding-bottom: 30px;
             }
-         
         }
+
+
+
+
+ 
+
 
 
