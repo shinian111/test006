@@ -71,9 +71,19 @@ class FaultTreeApp {
       li.classList.add('leaf');
     }
 
-    const iconSpan = document.createElement('span');
-    iconSpan.className = 'icon';
-    li.appendChild(iconSpan);
+    
+const iconSpan = document.createElement('span');
+                iconSpan.className = 'icon';
+               
+                // 设置图标
+                if (item.type === 'folder') {
+                    iconSpan.innerHTML = '<i class="fas fa-folder"></i>';
+                } else {
+                    iconSpan.innerHTML = '<i class="fas fa-file-medical"></i>';
+                }
+               
+                li.appendChild(iconSpan);
+
 
     const titleSpan = document.createElement('span');
     titleSpan.className = 'title';
