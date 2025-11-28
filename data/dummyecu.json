@@ -1,0 +1,14 @@
+[
+    {
+        "title": "Dummy ECU更换流程",
+        "type": "page",
+        "measures": [
+            "1.进入AutoBlid_IPB界面 ",
+            "<image src='images/C44&46/dummyECU1.png' alt='进入AutoBlid_IPB' />",
+            "2.查看该界面的按钮是否被点亮，如下图则表示上电状态",
+            "<image src='images/C44&46/dummyECU2.png' alt='AutoBlid_IPB上电状态' />",
+            "3.点击被点亮的按钮，保持与下图相同的界面，则为下电状态 ，然后更换dummy ECU ",
+            "<image src='images/C44&46/dummyECU3.png' alt='AutoBlid_IPB下电状态' />"
+        ]
+    }
+]
